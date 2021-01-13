@@ -1,3 +1,4 @@
 1) SELECT * FROM `ospiti` WHERE `document_type` = 'CI'
 2) SELECT * FROM `ospiti` WHERE `date_of_birth` > '1988'
 3) SELECT * FROM `ospiti` WHERE DATE_SUB(CURRENT_DATE, INTERVAL 20 YEAR) > `date_of_birth`
+4) SELECT * FROM `ospiti` WHERE `name` LIKE 'D%'
