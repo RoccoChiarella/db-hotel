@@ -3,3 +3,4 @@
 3) SELECT * FROM `ospiti` WHERE DATE_SUB(CURRENT_DATE, INTERVAL 20 YEAR) > `date_of_birth`
 4) SELECT * FROM `ospiti` WHERE `name` LIKE 'D%'
 5) SELECT COUNT(`status`) FROM `pagamenti` WHERE `status` = 'accepted'
+6) SELECT MAX(`price`) FROM `pagamenti`
