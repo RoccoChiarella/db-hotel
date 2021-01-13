@@ -6,3 +6,4 @@
 6) SELECT MAX(`price`) FROM `pagamenti`
 7) SELECT * FROM `ospiti` WHERE `document_type` = 'Driver License' AND EXTRACT(YEAR FROM `date_of_birth`) = 1975
 8) SELECT COUNT(`ospite_id`) FROM `paganti` INNER JOIN `ospiti` ON `paganti`.`ospite_id` = `ospiti`.`id`
+9) SELECT SUM(`beds`) FROM `stanze`
