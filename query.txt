@@ -11,3 +11,5 @@
 11) SELECT `pagamenti`.`status` AS status_pagamento, SUM(`pagamenti`.`price`) FROM `pagamenti` GROUP BY `pagamenti`.`status`
 12) SELECT `prenotazioni`.`stanza_id` AS n_stanza, COUNT(`prenotazioni`.`stanza_id`) AS n_prenotazioni FROM `prenotazioni` GROUP BY `prenotazioni`.`stanza_id`
 13) SELECT HOUR(`prenotazioni`.`created_at`) AS ora, COUNT(`prenotazioni`.`created_at`) AS n_prenotazioni FROM `prenotazioni` GROUP BY HOUR(`prenotazioni`.`created_at`)
+14) Soluzione con tutti gli ospiti: SELECT `prenotazioni_has_ospiti`.`ospite_id` AS prenotazioni, COUNT(*) AS n_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY `prenotazioni_has_ospiti`.`ospite_id` ORDER BY `n_prenotazioni` DESC
+    Soluzione con solo il primo ospite: SELECT `prenotazioni_has_ospiti`.`ospite_id` AS prenotazioni, COUNT(*) AS n_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY `prenotazioni_has_ospiti`.`ospite_id` ORDER BY `n_prenotazioni` DESC LIMIT 1
