@@ -7,3 +7,4 @@
 7) SELECT * FROM `ospiti` WHERE `document_type` = 'Driver License' AND EXTRACT(YEAR FROM `date_of_birth`) = 1975
 8) SELECT COUNT(`ospite_id`) FROM `paganti` INNER JOIN `ospiti` ON `paganti`.`ospite_id` = `ospiti`.`id`
 9) SELECT SUM(`beds`) FROM `stanze`
+10) SELECT YEAR(`date_of_birth`) AS anno, COUNT(*) AS n_ospiti FROM `ospiti` GROUP BY YEAR(`date_of_birth`)
