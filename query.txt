@@ -15,3 +15,4 @@
     Soluzione con solo il primo ospite: SELECT `prenotazioni_has_ospiti`.`ospite_id` AS prenotazioni, COUNT(*) AS n_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY `prenotazioni_has_ospiti`.`ospite_id` ORDER BY `n_prenotazioni` DESC LIMIT 1
 15) SELECT `ospiti`.`name`, COUNT(`ospiti`.`id`) AS n FROM `ospiti` INNER JOIN `prenotazioni_has_ospiti` ON `ospiti`.`id` = `prenotazioni_has_ospiti`.`ospite_id` GROUP BY `ospiti`.`id` HAVING COUNT(`ospiti`.`id`) > 2
 16) SELECT `prenotazioni_has_ospiti`.`prenotazione_id`, `ospiti`.* FROM `prenotazioni_has_ospiti` LEFT JOIN `ospiti` ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id`
+17) SELECT `ospiti`.`name` AS nome, `ospiti`.`lastname` AS cognome, `pagamenti`.`price` AS prezzo FROM `paganti` JOIN `ospiti` ON `paganti`.`ospite_id` = `ospiti`.`id` JOIN `pagamenti` ON `paganti`.`id` = `pagamenti`.`pagante_id` WHERE MONTH(`paganti`.`created_at`) = 05 AND YEAR(`paganti`.`created_at`) = 2018
