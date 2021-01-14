@@ -10,3 +10,4 @@
 10) SELECT YEAR(`date_of_birth`) AS anno, COUNT(*) AS n_ospiti FROM `ospiti` GROUP BY YEAR(`date_of_birth`)
 11) SELECT `pagamenti`.`status` AS status_pagamento, SUM(`pagamenti`.`price`) FROM `pagamenti` GROUP BY `pagamenti`.`status`
 12) SELECT `prenotazioni`.`stanza_id` AS n_stanza, COUNT(`prenotazioni`.`stanza_id`) AS n_prenotazioni FROM `prenotazioni` GROUP BY `prenotazioni`.`stanza_id`
+13) SELECT HOUR(`prenotazioni`.`created_at`) AS ora, COUNT(`prenotazioni`.`created_at`) AS n_prenotazioni FROM `prenotazioni` GROUP BY HOUR(`prenotazioni`.`created_at`)
