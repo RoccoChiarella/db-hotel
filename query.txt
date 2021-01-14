@@ -13,3 +13,4 @@
 13) SELECT HOUR(`prenotazioni`.`created_at`) AS ora, COUNT(`prenotazioni`.`created_at`) AS n_prenotazioni FROM `prenotazioni` GROUP BY HOUR(`prenotazioni`.`created_at`)
 14) Soluzione con tutti gli ospiti: SELECT `prenotazioni_has_ospiti`.`ospite_id` AS prenotazioni, COUNT(*) AS n_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY `prenotazioni_has_ospiti`.`ospite_id` ORDER BY `n_prenotazioni` DESC
     Soluzione con solo il primo ospite: SELECT `prenotazioni_has_ospiti`.`ospite_id` AS prenotazioni, COUNT(*) AS n_prenotazioni FROM `prenotazioni_has_ospiti` GROUP BY `prenotazioni_has_ospiti`.`ospite_id` ORDER BY `n_prenotazioni` DESC LIMIT 1
+15) SELECT `ospiti`.`name`, COUNT(`ospiti`.`id`) AS n FROM `ospiti` INNER JOIN `prenotazioni_has_ospiti` ON `ospiti`.`id` = `prenotazioni_has_ospiti`.`ospite_id` GROUP BY `ospiti`.`id` HAVING COUNT(`ospiti`.`id`) > 2
