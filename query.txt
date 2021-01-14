@@ -8,3 +8,4 @@
 8) SELECT COUNT(`ospite_id`) FROM `paganti` INNER JOIN `ospiti` ON `paganti`.`ospite_id` = `ospiti`.`id`
 9) SELECT SUM(`beds`) FROM `stanze`
 10) SELECT YEAR(`date_of_birth`) AS anno, COUNT(*) AS n_ospiti FROM `ospiti` GROUP BY YEAR(`date_of_birth`)
+11) SELECT `pagamenti`.`status` AS status_pagamento, SUM(`pagamenti`.`price`) FROM `pagamenti` GROUP BY `pagamenti`.`status`
